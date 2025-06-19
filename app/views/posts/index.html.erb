@@ -1,0 +1,15 @@
+<%= render "layouts/navbar" %>
+
+<ul>
+  <% @posts.each do |post| %>
+    <div>
+      <p>Title: <%= post.title %></p>
+      <% if user_signed_in? %>
+        <p>Author: <%= post.user.username %></p>
+      <% else %>
+        <p>Author: Anonymous</p>
+      <% end %>
+      <p>Content: <%= post.content %></p>
+    </div>
+  <% end %>
+</ul>
